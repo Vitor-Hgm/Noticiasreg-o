@@ -1,122 +1,259 @@
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f4f6f8;
+/* RESET BASE */
+*{
+    box-sizing:border-box;
 }
 
-/* HEADER */
-.header {
-    box-sizing: border-box;
-    background-color: #06374b;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    padding: 10px 15px;
-    position: fixed;
-    top: 0;
-    left: 0;
+html, body{
+    height:100%;
 }
 
-.logo {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f6f8;
+    line-height:1.5;
+
+    display:flex;
+    flex-direction:column;
+    min-height:100vh;
 }
 
-.menu {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
+/* ================= HEADER ================= */
+
+.header{
+    background:#06374b;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px clamp(16px,4vw,40px);
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
-.menu a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:clamp(18px,2vw,24px);
 }
 
-/* CONTEÚDO */
-.container {
-    margin: 120px auto 40px auto;
-    max-width: 900px;
-    background-color: #fff;
-    color: #333;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+.menu{
+    list-style:none;
+    display:flex;
+    gap:clamp(14px,2vw,30px);
+    margin:0;
+    padding:0;
 }
 
-.noticia {
-    text-align: center;
-    margin-bottom: 50px;
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:clamp(14px,1.3vw,18px);
 }
 
-.noticia img {
-    margin-top: 10px;
-    border-radius: 16px;
-    width: 100%;
-    max-width: 600px;
-    height: auto;
+/* ================= CONTAINER ================= */
+
+.container{
+    width:min(1100px, 92%);
+    margin:clamp(20px,4vw,40px) auto;
+    background:#fff;
+    padding:clamp(18px,3vw,35px);
+    border-radius:12px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    flex:1;
 }
 
-.noticia p {
-    margin-top: 25px;
-    font-size: 17px;
-    line-height: 1.6;
-    text-align: justify;
+/* ================= TIPOGRAFIA FLUIDA ================= */
+
+h1{
+    font-size:clamp(22px,3vw,34px);
+    line-height:1.3;
 }
 
-/* FOOTER */
-.footer {
-    background-color: #06374b;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
+h2{
+    font-size:clamp(20px,2.5vw,28px);
 }
 
+h3{
+    font-size:clamp(18px,2vw,22px);
+}
 
-/* ===== NOVOS ESTILOS DAS PÁGINAS ===== */
+p{
+    font-size:clamp(15px,1.4vw,18px);
+}
+
+/* ================= NOTÍCIAS ================= */
+
+.noticia{
+    margin-bottom:clamp(40px,6vw,70px);
+}
+
+.noticia img{
+    width:100%;
+    height:auto;
+    border-radius:14px;
+    margin-top:14px;
+    object-fit:cover;
+}
+
+/* ================= CARDS ================= */
 
 .titulo-pagina{
     text-align:center;
-    margin-bottom:30px;
+    margin-bottom:clamp(20px,3vw,35px);
 }
 
 .cards{
     display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
-    gap:25px;
+    gap:clamp(16px,2vw,28px);
 }
 
 .card{
-    background:#fff;
-    border-radius:12px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    background:white;
+    border-radius:14px;
     overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.08);
     transition:0.3s;
-}
-
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 8px 18px rgba(0,0,0,0.15);
+    display:flex;
+    flex-direction:column;
 }
 
 .card img{
     width:100%;
-    height:170px;
+    height:200px;
     object-fit:cover;
 }
 
 .card h3{
-    padding:15px 15px 5px 15px;
-    font-size:18px;
+    padding:18px 18px 6px 18px;
 }
 
 .card p{
-    padding:0 15px 20px 15px;
+    padding:0 18px 20px 18px;
     color:#555;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+    background:#06374b;
+    color:white;
+    text-align:center;
+    padding:clamp(18px,3vw,26px);
+    margin-top:auto;
+}
+
+/* ================================================= */
+/* 📱 RESPONSIVIDADE REAL – MUDANÇA DE LAYOUT */
+/* ================================================= */
+
+/* Desktop grande */
+@media(min-width:1100px){
+    .cards{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
+
+/* Notebook / desktop médio */
+@media(max-width:1099px){
+    .cards{
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+/* Tablet */
+@media(max-width:768px){
+
+    .header{
+        flex-direction:column;
+        gap:10px;
+        text-align:center;
+    }
+
+    .menu{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+}
+
+/* Celular pequeno */
+@media(max-width:480px){
+
+    .container{
+        width:94%;
+        padding:18px;
+    }
+
+    .card img{
+        height:170px;
+    }
+}
+
+/* ================================================= */
+/* 📱 MELHOR LEITURA DAS NOTÍCIAS NO CELULAR */
+/* ================================================= */
+
+@media(max-width:600px){
+
+    .noticia{
+        text-align:left;
+    }
+
+    .noticia h1{
+        font-size:26px;
+        line-height:1.3;
+        margin-bottom:15px;
+    }
+
+    .noticia h2{
+        font-size:22px;
+        line-height:1.3;
+        margin-bottom:15px;
+    }
+
+    .noticia p{
+        font-size:18px;
+        line-height:1.75;
+        margin-top:18px;
+    }
+
+    .noticia img{
+        margin-top:18px;
+        border-radius:12px;
+    }
+}
+
+/* ================================================= */
+/* 📱 MELHORIA DE LEITURA NA HOME (CELULAR) */
+/* ================================================= */
+
+@media(max-width:600px){
+
+    .noticia p{
+        font-size:18px;
+        line-height:1.8;
+        letter-spacing:0.2px;
+    }
+
+    .noticia h1{
+        font-size:26px;
+        line-height:1.3;
+    }
+
+    .noticia h2{
+        font-size:22px;
+        line-height:1.3;
+    }
+
+    .container{
+        padding:22px;
+    }
+
 }
