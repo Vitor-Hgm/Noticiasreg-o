@@ -1,55 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Notícias Regionais</title>
-    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Acompanhe as notícias de Peabiru, Goioerê e região: cidades, infraestrutura e cotidiano.">
+    <meta name="theme-color" content="#172f35">
+    <title>Região | Notícias Regionais</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="utility-bar">
+    <div class="container utility-inner">
+        <span class="utility-label">Informação perto de você</span>
+        <span>Goioerê e região · Paraná</span>
+    </div>
+</div>
 <header class="header">
-    <h1>Noticias Regionais</h1>
-    <nav>
-        <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="regiao.html">Região</a></li>
-            <li><a href="politica.html">Política</a></li>
-        </ul>
+    <div class="container masthead">
+        <a href="index.html" class="logo" aria-label="Notícias Regionais — início">
+            <span class="logo-mark" aria-hidden="true">NR</span>
+            <span>
+                <span class="logo-name">Notícias<span>Regionais.</span></span>
+                <span class="logo-subtitle">Sua região. Sua informação.</span>
+            </span>
+        </a>
+        <p class="masthead-note">Um olhar atento para o que está perto.</p>
+    </div>
+    <nav class="nav-bar" aria-label="Navegação principal">
+        <div class="container nav-inner">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="regiao.html" aria-current="page">Região</a></li>
+                <li><a href="politica.html">Política</a></li>
+            </ul>
+            <span class="nav-caption">Conectado com a nossa região</span>
+        </div>
     </nav>
 </header>
+<main id="conteudo" class="container">
 
-<main class="container">
-
-    <h1 class="titulo-pagina">Notícias da Região</h1>
-
+    <nav class="breadcrumb" aria-label="Você está aqui"><a href="index.html">Início</a><span aria-hidden="true">/</span><span aria-current="page">Região</span></nav>
+    <section class="page-intro category-intro" aria-labelledby="titulo-pagina">
+        <div><span class="eyebrow">O cotidiano da nossa comunidade</span><h1 id="titulo-pagina">Notícias da Região</h1></div>
+        <p>As mudanças na sua cidade, os assuntos do bairro e tudo o que acontece perto de você.</p>
+    </section>
+    <div class="section-heading"><h2>Acontece na região</h2><span class="tag">Notícias Regionais</span></div>
     <div class="cards">
 
-        <div class="card">
-            <img src="imagens/peabiru.png">
-            <h3>Nova praça é inaugurada no centro da cidade de Peabiru</h3>
-            <p>Espaço conta com área verde, playground e pista de caminhada.</p>
-        </div>
+        <article id="praca" class="card" aria-labelledby="titulo-praca">
+            <img src="imagens/peabiru.png" alt="Praça no centro de Peabiru" width="1024" height="1024">
+            <div class="card-content">
+                <span class="tag">Peabiru · Cidade</span>
+                <h2 id="titulo-praca">Nova praça é inaugurada no centro da cidade de Peabiru</h2>
+                <p>Espaço conta com área verde, playground e pista de caminhada.</p>
+                <div class="story-meta"><span>Região</span><span>Espaços públicos</span></div>
+            </div>
+        </article>
 
-        <div class="card">
-            <img src="imagens/obras.png">
-            <h3>Obras alteram trânsito na região central</h3>
-            <p>Prefeitura orienta motoristas a utilizarem rotas alternativas.</p>
-        </div>
+        <article id="obras" class="card" aria-labelledby="titulo-obras">
+            <img src="imagens/obras.png" alt="Obras na região central" width="1024" height="1024" loading="lazy">
+            <div class="card-content">
+                <span class="tag">Mobilidade</span>
+                <h2 id="titulo-obras">Obras alteram trânsito na região central</h2>
+                <p>Prefeitura orienta motoristas a utilizarem rotas alternativas.</p>
+                <div class="story-meta"><span>Região</span><span>Infraestrutura</span></div>
+            </div>
+        </article>
 
-        <div class="card">
-            <img src="imagens/alagamento.png">
-            <h3>Chuva forte causa alagamentos em bairros</h3>
-            <p>Defesa Civil permanece em alerta e monitora áreas de risco.</p>
-        </div>
-
+        <article id="chuvas" class="card" aria-labelledby="titulo-chuvas">
+            <img src="imagens/alagamento.png" alt="Alagamento em área urbana após a chuva" width="1024" height="1024" loading="lazy">
+            <div class="card-content">
+                <span class="tag">Tempo e cidade</span>
+                <h2 id="titulo-chuvas">Chuva forte causa alagamentos em bairros</h2>
+                <p>Defesa Civil permanece em alerta e monitora áreas de risco.</p>
+                <div class="story-meta"><span>Região</span><span>Defesa Civil</span></div>
+            </div>
+        </article>
     </div>
-
+    <div class="category-note"><p>Continue explorando os assuntos da nossa região.</p><a class="text-link" href="politica.html">Acompanhar política <span aria-hidden="true">↗</span></a></div>
+    <section class="region-banner" aria-labelledby="titulo-mais">
+        <div><span class="eyebrow">Uma visão mais completa</span><h2 id="titulo-mais">Toda história tem novos capítulos.</h2><p>Confira também as outras editorias do Notícias Regionais.</p></div>
+        <a class="button-link" href="index.html">Voltar aos destaques <span aria-hidden="true">↗</span></a>
+    </section>
 </main>
 
 <footer class="footer">
-    <h2>Desenvolvido por Anonimo</h2>
+    <div class="container footer-top">
+        <div>
+            <a class="logo-name" href="index.html" aria-label="Notícias Regionais — início">Notícias<span>Regionais.</span></a>
+            <p>As histórias da nossa região têm lugar aqui.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navegação do rodapé">
+            <a href="index.html">Início</a>
+            <a href="regiao.html">Região</a>
+            <a href="politica.html">Política</a>
+        </nav>
+    </div>
+    <div class="container footer-bottom">
+        <span>Notícias Regionais · Goioerê e região</span>
+        <span>Desenvolvido por Anônimo</span>
+    </div>
 </footer>
-
 </body>
 </html>

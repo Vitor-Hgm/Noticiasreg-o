@@ -1,55 +1,107 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Notícias Regionais</title>
-    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Notícias de política regional: gestão pública, investimentos e cenário eleitoral.">
+    <meta name="theme-color" content="#172f35">
+    <title>Política | Notícias Regionais</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+<div class="utility-bar">
+    <div class="container utility-inner">
+        <span class="utility-label">Informação perto de você</span>
+        <span>Goioerê e região · Paraná</span>
+    </div>
+</div>
 <header class="header">
-    <h1>Noticias Futebolisticas</h1>
-    <nav>
-        <ul class="menu">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="regiao.html">Região</a></li>
-            <li><a href="politica.html">Política</a></li>
-        </ul>
+    <div class="container masthead">
+        <a href="index.html" class="logo" aria-label="Notícias Regionais — início">
+            <span class="logo-mark" aria-hidden="true">NR</span>
+            <span>
+                <span class="logo-name">Notícias<span>Regionais.</span></span>
+                <span class="logo-subtitle">Sua região. Sua informação.</span>
+            </span>
+        </a>
+        <p class="masthead-note">Um olhar atento para o que está perto.</p>
+    </div>
+    <nav class="nav-bar" aria-label="Navegação principal">
+        <div class="container nav-inner">
+            <ul class="menu">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="regiao.html">Região</a></li>
+                <li><a href="politica.html" aria-current="page">Política</a></li>
+            </ul>
+            <span class="nav-caption">Conectado com a nossa região</span>
+        </div>
     </nav>
 </header>
+<main id="conteudo" class="container">
 
-<main class="container">
-
-    <h1 class="titulo-pagina">Notícias de Política</h1>
-
+    <nav class="breadcrumb" aria-label="Você está aqui"><a href="index.html">Início</a><span aria-hidden="true">/</span><span aria-current="page">Política</span></nav>
+    <section class="page-intro category-intro" aria-labelledby="titulo-pagina">
+        <div><span class="eyebrow">As decisões que passam pela nossa vida</span><h1 id="titulo-pagina">Notícias de Política</h1></div>
+        <p>Gestão pública, investimentos e os movimentos que ajudam a entender o cenário político.</p>
+    </section>
+    <div class="section-heading"><h2>Política em foco</h2><span class="tag">Notícias Regionais</span></div>
     <div class="cards">
 
-        <div class="card">
-            <img src="imagens/gilberto.png ">
-            <h3>Funcionario do setor de Patrimonios Publico é visto com Lula e Bolsonaro</h3>
-            <p>Gilberto junior da Prefeitura de Boa Esperança é visto... </p>
-        </div>
+        <article id="bastidores" class="card card-portrait" aria-labelledby="titulo-bastidores">
+            <img src="imagens/gilberto.png" alt="Imagem que acompanha a matéria sobre Gilberto Junior, Lula e Bolsonaro" width="1024" height="1536">
+            <div class="card-content">
+                <span class="tag">Bastidores</span>
+                <h2 id="titulo-bastidores">Funcionário do setor de Patrimônios Públicos é visto com Lula e Bolsonaro</h2>
+                <p>Gilberto Junior da Prefeitura de Boa Esperança é visto...</p>
+                <div class="story-meta"><span>Política</span><span>Boa Esperança</span></div>
+            </div>
+        </article>
 
-        <div class="card">
-            <img src="imagens/prefeito.png">
-            <h3>Prefeito anuncia pacote de investimentos</h3>
-            <p>Programa prevê obras em infraestrutura e educação.</p>
-        </div>
+        <article id="investimentos" class="card" aria-labelledby="titulo-investimentos">
+            <img src="imagens/prefeito.png" alt="Imagem que acompanha o anúncio do pacote de investimentos" width="1536" height="1024" loading="lazy">
+            <div class="card-content">
+                <span class="tag">Gestão pública</span>
+                <h2 id="titulo-investimentos">Prefeito anuncia pacote de investimentos</h2>
+                <p>Programa prevê obras em infraestrutura e educação.</p>
+                <div class="story-meta"><span>Política</span><span>Investimentos</span></div>
+            </div>
+        </article>
 
-        <div class="card">
-            <img src="imagens/eleitoral.png">
-            <h3>Pesquisa aponta mudança no cenário eleitoral</h3>
-            <p>Levantamento mostra crescimento de candidatos independentes.</p>
-        </div>
-
+        <article id="eleicoes" class="card" aria-labelledby="titulo-eleicoes">
+            <img src="imagens/eleitoral.png" alt="Imagem que acompanha a reportagem sobre o cenário eleitoral" width="1536" height="1024" loading="lazy">
+            <div class="card-content">
+                <span class="tag">Eleições</span>
+                <h2 id="titulo-eleicoes">Pesquisa aponta mudança no cenário eleitoral</h2>
+                <p>Levantamento mostra crescimento de candidatos independentes.</p>
+                <div class="story-meta"><span>Política</span><span>Cenário eleitoral</span></div>
+            </div>
+        </article>
     </div>
-
+    <div class="category-note"><p>Continue explorando os assuntos da nossa região.</p><a class="text-link" href="regiao.html">Explorar a região <span aria-hidden="true">↗</span></a></div>
+    <section class="region-banner" aria-labelledby="titulo-mais">
+        <div><span class="eyebrow">Uma visão mais completa</span><h2 id="titulo-mais">Toda história tem novos capítulos.</h2><p>Confira também as outras editorias do Notícias Regionais.</p></div>
+        <a class="button-link" href="index.html">Voltar aos destaques <span aria-hidden="true">↗</span></a>
+    </section>
 </main>
 
 <footer class="footer">
-    <h2>Desenvolvido por Anonimo</h2>
+    <div class="container footer-top">
+        <div>
+            <a class="logo-name" href="index.html" aria-label="Notícias Regionais — início">Notícias<span>Regionais.</span></a>
+            <p>As histórias da nossa região têm lugar aqui.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Navegação do rodapé">
+            <a href="index.html">Início</a>
+            <a href="regiao.html">Região</a>
+            <a href="politica.html">Política</a>
+        </nav>
+    </div>
+    <div class="container footer-bottom">
+        <span>Notícias Regionais · Goioerê e região</span>
+        <span>Desenvolvido por Anônimo</span>
+    </div>
 </footer>
-
 </body>
 </html>
