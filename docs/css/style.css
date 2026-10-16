@@ -13,8 +13,9 @@
 html { scroll-behavior: smooth; scroll-padding-top: 24px; }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; min-height: 100vh; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; }
 a { color: inherit; text-decoration: none; }
-img { display: block; width: 100%; height: auto; }
+img { display: block; width: 100%; max-width: 100%; height: auto; }
 h1, h2, h3, p, figure { margin: 0; }
+h1, h2, h3, p { overflow-wrap: break-word; }
 a, summary { -webkit-tap-highlight-color: transparent; }
 a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
 ::selection { background: #c9e2d5; color: var(--ink); }
@@ -24,11 +25,11 @@ a:focus-visible, summary:focus-visible { outline: 3px solid var(--accent); outli
 
 /* Cabeçalho e navegação */
 .utility-bar { background: var(--ink); color: #e0e8e5; font-size: 11px; }
-.utility-inner { display: flex; justify-content: space-between; gap: 16px; padding-block: 9px; }
+.utility-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; padding-block: 9px; }
 .utility-label { text-transform: uppercase; letter-spacing: 1.8px; }
 .masthead { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 29px; }
 .logo { display: inline-flex; align-items: center; gap: 13px; }
-.logo-mark { width: 48px; height: 48px; display: grid; place-items: center; background: var(--accent); color: var(--white); font-family: var(--serif); font-size: 23px; font-weight: bold; letter-spacing: -2px; border-radius: 3px; }
+.logo-mark { width: 48px; height: 48px; flex-shrink: 0; display: grid; place-items: center; background: var(--accent); color: var(--white); font-family: var(--serif); font-size: 23px; font-weight: bold; letter-spacing: -2px; border-radius: 3px; }
 .logo-name { font-family: var(--serif); font-size: 30px; font-weight: bold; letter-spacing: -1.2px; line-height: 1.1; }
 .logo-name span { color: var(--accent); }
 .logo-subtitle { display: block; margin-top: 6px; font-size: 9px; text-transform: uppercase; letter-spacing: 2.5px; color: var(--muted); }
@@ -58,14 +59,15 @@ main.container { flex: 1; padding-block: 44px 72px; }
 .tag-filled { background: var(--accent-soft); padding: 5px 9px; border-radius: 2px; }
 
 /* Matéria de destaque */
-.lead-story { display: grid; grid-template-columns: .95fr 1.05fr; gap: 0 46px; padding-bottom: 32px; }
+.lead-story { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: 0 46px; padding-bottom: 32px; }
+.lead-story > *, .secondary-layout > *, .sport-story > *, .brief > *, .page-intro > * { min-width: 0; }
 .lead-copy { align-self: center; padding-block: 12px; }
 .lead-copy h2 { margin-top: 18px; font-family: var(--serif); font-size: clamp(28px, 3.2vw, 43px); line-height: 1.14; letter-spacing: -1.2px; font-weight: 400; }
 .lead-copy > p { margin-top: 22px; font-size: 14px; line-height: 1.85; color: var(--muted); }
 .story-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 20px; font-size: 10px; letter-spacing: .4px; color: var(--muted); }
 .story-meta span + span::before { content: '/'; margin-right: 9px; color: #8b9791; }
-.lead-photo { position: relative; overflow: hidden; border-radius: 3px; background: var(--accent-soft); }
-.lead-photo img { height: 100%; min-height: 440px; max-height: 560px; object-fit: cover; object-position: 50% 45%; }
+.lead-photo { position: relative; align-self: center; overflow: hidden; border-radius: 3px; background: var(--accent-soft); }
+.lead-photo img { height: auto; aspect-ratio: 6 / 5; object-fit: cover; object-position: 50% 45%; }
 .lead-photo figcaption { position: absolute; bottom: 16px; left: 16px; padding: 5px 11px; border-radius: 2px; background: var(--paper); color: var(--ink); font-size: 10px; letter-spacing: .5px; }
 .story-details { grid-column: 1 / -1; margin-top: 23px; border-top: 1px solid var(--line); }
 .story-details summary { width: fit-content; padding: 15px 0; color: var(--accent); font-size: 12px; font-weight: 700; cursor: pointer; }
@@ -76,15 +78,15 @@ main.container { flex: 1; padding-block: 44px 72px; }
 .article-body p + p { margin-top: 22px; }
 
 /* Matérias de apoio e links entre as editorias */
-.secondary-layout { display: grid; grid-template-columns: 1.6fr 1fr; gap: 36px; margin-top: 12px; }
-.sport-story { display: grid; grid-template-columns: .9fr 1fr; gap: 22px; }
-.sport-story > img { aspect-ratio: 4 / 3; height: 100%; max-height: 285px; object-fit: cover; border-radius: 3px; }
+.secondary-layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr); gap: 36px; margin-top: 12px; }
+.sport-story { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1fr); gap: 22px; align-items: start; }
+.sport-story > img { aspect-ratio: 4 / 3; height: auto; object-fit: cover; border-radius: 3px; }
 .sport-story h3 { font-family: var(--serif); font-size: 25px; line-height: 1.25; font-weight: 400; letter-spacing: -.5px; margin-top: 10px; }
 .sport-story .story-excerpt { font-size: 12px; line-height: 1.8; color: var(--muted); margin-top: 12px; }
 .sport-story .story-details { margin-top: 0; }
 .sport-story .article-body p { font-size: 16px; }
 .editorial-aside { border-left: 1px solid var(--line); padding-left: 30px; }
-.brief { display: grid; grid-template-columns: 1fr 90px; gap: 20px; padding: 0 0 22px; }
+.brief { display: grid; grid-template-columns: minmax(0, 1fr) 90px; gap: 20px; padding: 0 0 22px; }
 .brief + .brief { padding-top: 22px; border-top: 1px solid var(--line); }
 .brief img { width: 90px; height: 90px; object-fit: cover; border-radius: 3px; }
 .brief h3 { font-family: var(--serif); font-size: 20px; line-height: 1.3; font-weight: 400; margin-top: 8px; }
@@ -135,7 +137,7 @@ article[id]:target { outline: 2px solid var(--accent); outline-offset: 7px; }
     .editorial-aside { border-left: 0; padding-left: 0; }
     .brief-list { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
     .brief + .brief { padding-top: 0; border-top: 0; }
-    .cards { gap: 18px; }
+    .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
     .card-content { padding: 20px; }
     .card h2 { font-size: 23px; }
 }
@@ -157,10 +159,10 @@ article[id]:target { outline: 2px solid var(--accent); outline-offset: 7px; }
     .lead-copy { padding: 0 0 24px; }
     .lead-copy h2 { font-size: clamp(29px, 6vw, 39px); }
     .lead-copy > p { margin-top: 16px; }
-    .lead-photo img { min-height: 0; max-height: 480px; aspect-ratio: 4 / 3; object-position: 50% 42%; }
+    .lead-photo img { aspect-ratio: 4 / 3; object-position: 50% 42%; }
     .story-details { margin-top: 16px; }
     .sport-story { grid-template-columns: 1fr; gap: 20px; }
-    .sport-story > img { max-height: none; height: auto; aspect-ratio: 16 / 9; }
+    .sport-story > img { aspect-ratio: 16 / 9; }
     .sport-story h3 { font-size: 29px; }
     .sport-story .story-excerpt { font-size: 14px; }
     .sport-story .story-details { margin-top: 0; }
